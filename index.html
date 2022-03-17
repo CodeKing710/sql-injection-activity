@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SQL Injection Attack</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link href="./style.css" />
+  </head>
+  <body>
+    <form action="/login" method="POST">
+      <div class="container">
+        <label for="username">Username: </label>
+        <input type="text" name="username" id="username" required /><br>
+        <label for="password">Password: </label>
+        <input type="text" name="password" id="password" required /><br>
+        <input type="submit" />
+      </div>
+      <script>
+        if(document.location.hash === '#unauthorized') {
+        document.write('<div class="unauthorized">Invalid Username or Password</div>');
+        } else if(document.location.hash === '#error') {
+        document.write('<div class="error">An error has occurred</div>');
+        }
+      </script>
+    </form>
+  </body>
+</html>
